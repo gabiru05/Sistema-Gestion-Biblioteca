@@ -49,18 +49,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $update->execute();
             $update->close();
 
-            echo "<p>Libro alquilado con éxito. Fecha de devolución en $dias días.</p>";
+            echo "<div class='alert alert-success'>Libro alquilado con éxito. Fecha de devolución en $dias días.</div>";
         } else {
-            echo "<p>El libro no está disponible.</p>";
+            echo "<div class='alert alert-danger'>El libro no está disponible.</div>";
         }
     }
 }
 
+echo "<div class='w-100 text-center my-2 py-2'>
+        <h2 class='display-6'>Préstamo de Libros</h2>
+      </div>";
+
 // Formulario de búsqueda
-echo "<form method='POST'>
-    <input type='text' name='search_term' placeholder='Buscar un libro...' value='" . htmlspecialchars($lastSearch) . "'>
-    <button type='submit' name='buscar'>Buscar</button>
-</form>";
+echo "<form method='POST' class='d-flex justify-content-center mb-4'>
+        <div class='input-group w-100'>
+            <input type='text' name='search_term' placeholder='Buscar un libro...' value='" . htmlspecialchars($lastSearch) . "' class='form-control' />
+            <div class='input-group-append'>
+                <button type='submit' name='buscar' class='btn btn-primary'>Buscar</button>
+            </div>
+        </div>
+    </form>";
 
 // Mostrar el catálogo de libros, aplicando la búsqueda si existe
 $query = "SELECT * FROM libros";
@@ -75,26 +83,41 @@ if (!empty($lastSearch)) {
     $result = $conn->query($query);
 }
 
-echo "<h2>Préstamo de Libros</h2>";
+echo "<div class='row'>";  // Comienza la fila de tarjetas
 
 while ($libro = $result->fetch_assoc()) {
-    echo "<div class='libro'>
-        <h3>" . htmlspecialchars($libro['titulo']) . "</h3>
-        <p>Autor: " . htmlspecialchars($libro['autor']) . "</p>
-        <p>Género: " . htmlspecialchars($libro['genero']) . "</p>";
-    echo $libro['disponible'] ? "<p style='color:green;'>Disponible</p>" : "<p style='color:red;'>No disponible</p>";
+    // Determinar la disponibilidad del libro
+    $disponibilidad = $libro['disponible'] ? 'Disponible' : 'No disponible';
+    $borderClass = $libro['disponible'] ? 'border-success' : 'border-danger'; // Borde verde si está disponible, rojo si no
+    $statusBackground = $libro['disponible'] ? 'bg-success text-white' : 'bg-danger text-white'; // Fondo verde o rojo solo para el estado
+
+    // Comenzamos la tarjeta
+    echo "<div class='col-md-4 mb-4'>
+            <div class='card shadow-sm $borderClass'>"; // Aplicar borde según disponibilidad
+    echo "<div class='card-body'>";
+    echo "<h5 class='card-title font-weight-bold'>" . htmlspecialchars($libro['titulo']) . "</h5>";
+    echo "<p class='card-text'>Autor: " . htmlspecialchars($libro['autor']) . "</p>";
+    echo "<p class='card-text'>Género: " . htmlspecialchars($libro['genero']) . "</p>";
+    // Mostrar estado con el fondo de color solo en esa sección
+    echo "<p class='card-text'><strong>Estado: </strong><span class='px-2 py-1 $statusBackground'>$disponibilidad</span></p>";
 
     if ($libro['disponible']) {
         echo "<form method='POST'>
-            <input type='hidden' name='id_libro' value='" . $libro['id'] . "'>
-            <button type='submit' name='alquilar'>Alquilar</button>
-        </form>";
+                <input type='hidden' name='id_libro' value='" . $libro['id'] . "'>
+                <button type='submit' name='alquilar' class='btn btn-success'>Alquilar</button>
+              </form>";
     } else {
-        echo "<p>No disponible para alquilar.</p>";
+        echo "<p class='alert alert-warning'>No disponible para alquilar</p>";  // Estilo diferente para cuando no está disponible
     }
-    echo "</div>";
+    echo "  </div>
+          </div>
+        </div>";
 }
 
-echo "<a href='catalogo.php'>Volver al Catálogo</a>";
+echo "</div>";  // Cierre de la fila de tarjetas
+
+echo "<a href='catalogo.php' class='btn btn-link'>Volver al Catálogo</a>";
 $conn->close();
+
+echo "</div>";
 ?>
