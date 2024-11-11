@@ -1,5 +1,5 @@
 <?php
-require_once 'Database.php';
+require_once '../includes/Database.php';
 $db = new Database();
 $conn = $db->connect();
 

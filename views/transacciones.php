@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '../includes/header.php';
 echo "<div class='container my-5'>"; // Añadimos un margen superior e inferior para un diseño más espacioso
 
 $conn = new mysqli("localhost", "root", "", "lib_db");

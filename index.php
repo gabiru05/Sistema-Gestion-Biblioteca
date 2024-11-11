@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1>Bienvenido a la Biblioteca</h1>
-    <a href="login.php">Iniciar Sesión</a> | <a href="registro.php">Registrarse</a>
+    <a href="views/login.php">Iniciar Sesión</a> | <a href="views/registro.php">Registrarse</a>
 </body>
 </html>

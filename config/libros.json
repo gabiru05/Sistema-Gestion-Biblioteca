@@ -1,0 +1,212 @@
+[
+    {
+        "titulo": "Cien Años de Soledad",
+        "autor": "Gabriel García Márquez",
+        "genero": "Ficción",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "Don Quijote de la Mancha",
+        "autor": "Miguel de Cervantes",
+        "genero": "Aventura",
+        "cantidad": 1,
+        "disponible": true
+    },
+    {
+        "titulo": "Orgullo y Prejuicio",
+        "autor": "Jane Austen",
+        "genero": "Romance",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "Distopía",
+        "cantidad": 1,
+        "disponible": true
+    },
+    {
+        "titulo": "Matar a un Ruiseñor",
+        "autor": "Harper Lee",
+        "genero": "Drama",
+        "cantidad": 4,
+        "disponible": true
+    },
+    {
+        "titulo": "El Gran Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "genero": "Ficción",
+        "cantidad": 5,
+        "disponible": true
+    },
+    {
+        "titulo": "La Casa de los Espíritus",
+        "autor": "Isabel Allende",
+        "genero": "Ficción",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "Crimen y Castigo",
+        "autor": "Fiódor Dostoyevski",
+        "genero": "Filosofía",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "Los Miserables",
+        "autor": "Victor Hugo",
+        "genero": "Histórico",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "El Retrato de Dorian Gray",
+        "autor": "Oscar Wilde",
+        "genero": "Ficción",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "La Sombra del Viento",
+        "autor": "Carlos Ruiz Zafón",
+        "genero": "Ficción",
+        "cantidad": 4,
+        "disponible": true
+    },
+    {
+        "titulo": "Rayuela",
+        "autor": "Julio Cortázar",
+        "genero": "Ficción",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "Fahrenheit 451",
+        "autor": "Ray Bradbury",
+        "genero": "Ciencia ficción",
+        "cantidad": 1,
+        "disponible": true
+    },
+    {
+        "titulo": "El Alquimista",
+        "autor": "Paulo Coelho",
+        "genero": "Ficción",
+        "cantidad": 4,
+        "disponible": true
+    },
+    {
+        "titulo": "La Odisea",
+        "autor": "Homero",
+        "genero": "Épico",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "El Señor de los Anillos",
+        "autor": "J.R.R. Tolkien",
+        "genero": "Fantasía",
+        "cantidad": 5,
+        "disponible": true
+    },
+    {
+        "titulo": "Harry Potter y la Piedra Filosofal",
+        "autor": "J.K. Rowling",
+        "genero": "Fantasía",
+        "cantidad": 6,
+        "disponible": true
+    },
+    {
+        "titulo": "El Código Da Vinci",
+        "autor": "Dan Brown",
+        "genero": "Suspense",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "La Metamorfosis",
+        "autor": "Franz Kafka",
+        "genero": "Ficción",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "En Busca del Tiempo Perdido",
+        "autor": "Marcel Proust",
+        "genero": "Ficción",
+        "cantidad": 1,
+        "disponible": true
+    },
+    {
+        "titulo": "El Diario de Ana Frank",
+        "autor": "Ana Frank",
+        "genero": "Autobiografía",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "Un Mundo Feliz",
+        "autor": "Aldous Huxley",
+        "genero": "Distopía",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "El Hobbit",
+        "autor": "J.R.R. Tolkien",
+        "genero": "Fantasía",
+        "cantidad": 4,
+        "disponible": true
+    },
+    {
+        "titulo": "La Divina Comedia",
+        "autor": "Dante Alighieri",
+        "genero": "Épico",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "Drácula",
+        "autor": "Bram Stoker",
+        "genero": "Terror",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "Los Hermanos Karamazov",
+        "autor": "Fiódor Dostoyevski",
+        "genero": "Filosofía",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "La Iliada",
+        "autor": "Homero",
+        "genero": "Épico",
+        "cantidad": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "El Perfume",
+        "autor": "Patrick Süskind",
+        "genero": "Ficción",
+        "cantidad": 4,
+        "disponible": true
+    },
+    {
+        "titulo": "El Lobo Estepario",
+        "autor": "Hermann Hesse",
+        "genero": "Filosofía",
+        "cantidad": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "El Nombre de la Rosa",
+        "autor": "Umberto Eco",
+        "genero": "Misterio",
+        "cantidad": 3,
+        "disponible": true
+    }
+]

@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '../includes/header.php';
 echo "<div class='container mt-4'>";
 
 // Conexión a la base de datos
