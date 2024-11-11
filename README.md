@@ -1,52 +1,61 @@
-Los datos de la base de datos son:
 
---Para crear nuestra base de datos
-CREATE DATABASE lib_db;
+# Sistema de Préstamo de Libros
 
--- Mostrar todas las bases de datos disponibles en el servidor.
-SHOW DATABASES;
+Este proyecto implementa un sistema de gestión de préstamos de libros utilizando **PHP** y una base de datos **MySQL** (MariaDB). Los usuarios pueden registrarse, iniciar sesión y alquilar libros. El sistema también utiliza **cookies** para recordar la última búsqueda realizada y **sesiones** para manejar la autenticación de usuarios.
 
--- Usa la base de datos creada
-USE lib_db;
+## Tecnologías Utilizadas
 
-CREATE TABLE usuarios (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nombre VARCHAR(50) NOT NULL,
-correo VARCHAR(100) NOT NULL UNIQUE,
-password VARCHAR(255) NOT NULL
-);
+- **PHP**
+- **MySQL (MariaDB)**
+- **XAMPP** (para el servidor Apache y base de datos MySQL)
+- **HTML / CSS** (para la interfaz de usuario)
+- Bootstrap para la interfaz
 
-CREATE TABLE libros (
-id INT AUTO_INCREMENT PRIMARY KEY,
-titulo VARCHAR(100) NOT NULL,
-autor VARCHAR(100) NOT NULL,
-genero VARCHAR(50),
-disponible BOOLEAN DEFAULT TRUE
-);
+## Instrucciones de Instalación
 
-CREATE TABLE transacciones (
-id INT AUTO_INCREMENT PRIMARY KEY,
-id_libro INT,
-id_usuario INT,
-fecha_prestamo DATE,
-fecha_devolucion DATE,
-FOREIGN KEY (id_libro) REFERENCES libros(id),
-FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
-);
+1. **Instalar XAMPP**:  
+   Descarga e instala [XAMPP](https://www.apachefriends.org/index.html) en tu máquina local.
 
---me añado:
-INSERT INTO usuarios (nombre, correo, password) VALUES
-('Gaby', 'Gabriel.ruiz1@utp.ac.pa', PASSWORD('Holagaby'));
+2. **Configurar la Base de Datos**:  
+   Abre la terminal de comandos (o `cmd` en Windows) y navega al directorio de MySQL en XAMPP:
 
---Añadimos libros:
-INSERT INTO libros (titulo, autor, genero, disponible) VALUES
-('Cien Años de Soledad', 'Gabriel García Márquez', 'Ficción', TRUE),
-('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Aventura', TRUE),
-('Orgullo y Prejuicio', 'Jane Austen', 'Romance', TRUE),
-('1984', 'George Orwell', 'Distopía', TRUE),
-('Moby Dick', 'Herman Melville', 'Aventura', TRUE),
-('Crimen y Castigo', 'Fiódor Dostoyevski', 'Drama', TRUE),
-('La Odisea', 'Homero', 'Épica', TRUE),
-('El Gran Gatsby', 'F. Scott Fitzgerald', 'Ficción', TRUE),
-('Drácula', 'Bram Stoker', 'Horror', TRUE),
-('El Alquimista', 'Paulo Coelho', 'Ficción', TRUE);
+   ```bash
+   cd C:\xampp\mysql\bin
+
+## Luego, accede a MySQL e ingresa los comandos para crear la base de datos y las tablas necesarias:
+    
+
+## Funcionalidades
+
+- **Búsqueda de Libros**: Los usuarios pueden buscar libros por título, autor o género.
+- **Alquiler de Libros**: Los usuarios pueden alquilar libros si están disponibles.
+- **Transacciones de Alquiler**: Registra el libro alquilado, el usuario y las fechas de préstamo y devolución.
+- **Cookies**: Recordar la última búsqueda realizada.
+- **Sesiones**: Manejo de la autenticación de los usuarios.
+
+## Cómo Funciona
+
+### Registro de Usuarios
+Los usuarios pueden registrarse desde la página `registro.php`, y sus datos se guardan en la base de datos.
+
+### Inicio de Sesión
+Una vez registrados, los usuarios pueden iniciar sesión desde `login.php` y, una vez autenticados, acceden a las funcionalidades de alquiler.
+
+### Alquiler de Libros
+En `catalogo.php`, los usuarios ven el catálogo de libros disponibles y, en `prestamo.php`, pueden realizar el alquiler. Las sesiones verifican si el usuario está autenticado, y las cookies recuerdan la última búsqueda realizada.
+
+### Transacciones
+Cada alquiler crea un registro en la tabla `transacciones`, incluyendo la fecha de préstamo y la fecha de devolución del libro.
+
+### Verificación de Disponibilidad
+El estado de disponibilidad de los libros cambia a "No disponible" en la base de datos cuando un libro es alquilado.
+
+## Mejoras Futuras
+
+- **Mejorar la Interfaz**: Diseño atractivo y responsive.
+- **Funcionalidad de Devolución**: Permitir la devolución y ver el historial de alquileres.
+- **Calificación de Libros**: Sistema para que los usuarios califiquen los libros.
+
+## Contribuciones
+
+Si deseas contribuir a este proyecto, haz un fork del repositorio, realiza tus cambios y envía un pull request.
